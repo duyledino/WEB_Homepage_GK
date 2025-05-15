@@ -167,6 +167,27 @@ header > :nth-child(2) > .logos > a {
 
 header > :nth-child(2) > .logos > a > i {
   font-size: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+header > :nth-child(2) > .logos > a > i:hover {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: bgAnimate 0.75s linear infinite alternate;
 }
 
 header > :nth-child(2) > .loginAndCreate {
@@ -200,6 +221,45 @@ header > :nth-child(2) > .loginAndCreate > :first-child::before {
   z-index: -1;
 }
 
+header > :nth-child(2) > .loginAndCreate > :first-child::after {
+  content: "\f063";
+  position: absolute;
+  top: -130%;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Font Awesome 6 Free";
+  background: linear-gradient(90deg, blue, black, gray, indigo, violet);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  animation: point 0.5s infinite alternate,
+    bgAnimate 0.75s linear infinite alternate;
+}
+
+@keyframes bgAnimate {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes point {
+  0% {
+    animation-timing-function: ease-in;
+    transform: translateY(-10px);
+  }
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0px);
+  }
+}
+
 header > :nth-child(2) > .loginAndCreate > :first-child:hover {
   background-color: white;
   color: black;
@@ -225,10 +285,10 @@ header > :nth-child(2) > .loginAndCreate > :first-child:hover::before {
 
 @keyframes slideColors {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 100%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 100% 0%;
   }
 }
 
@@ -929,7 +989,6 @@ footer > img:last-child {
 }
 /* end footer */
 
-
 /* ------------- Responsive ------------- */
 
 @media (max-width: 768px) {
@@ -941,7 +1000,7 @@ footer > img:last-child {
   header > :first-child {
     width: 80%;
   }
-  header > :first-child > nav > ul > li > a { 
+  header > :first-child > nav > ul > li > a {
     font-size: 10px;
   }
   header > :first-child > nav > ul {
@@ -990,10 +1049,10 @@ footer > img:last-child {
     width: fit-content;
   }
   main > :first-child > div > :nth-child(2) > img {
-     width: 180px;
-     height: auto;
+    width: 180px;
+    height: auto;
   }
-   main > :first-child > div > :nth-child(2) > img:first-child {
+  main > :first-child > div > :nth-child(2) > img:first-child {
     left: -20px;
     bottom: -30px;
   }
@@ -1008,19 +1067,19 @@ footer > img:last-child {
     width: 200px;
     height: auto;
   }
-  main > :nth-child(2) > :nth-child(2) {  
+  main > :nth-child(2) > :nth-child(2) {
     width: 100%;
-    align-items: center; 
-    text-align: center;  
+    align-items: center;
+    text-align: center;
   }
-  main > :nth-child(2) > :nth-child(2) > :first-child {  
+  main > :nth-child(2) > :nth-child(2) > :first-child {
     max-width: 350px;
   }
-   main > :nth-child(2) > :nth-child(2) > :nth-child(2) { 
-    width: 80%;  
+  main > :nth-child(2) > :nth-child(2) > :nth-child(2) {
+    width: 80%;
   }
   main > :nth-child(2) > :nth-child(2) > button {
-    max-width: 150px; 
+    max-width: 150px;
     width: 50%;
   }
 
@@ -1028,23 +1087,23 @@ footer > img:last-child {
   main > :nth-child(3) {
     flex-direction: column-reverse;
     align-items: center;
-    gap: 30px; 
+    gap: 30px;
   }
   main > :nth-child(3) > :first-child {
     position: static;
-    order: 2; 
+    order: 2;
     width: 100px;
   }
   main > :nth-child(3) > :last-child {
-    width: 70%; 
+    width: 70%;
     max-width: 450px;
     height: auto;
-    order: 1; 
+    order: 1;
   }
-  main > :nth-child(3) > div { 
+  main > :nth-child(3) > div {
     width: 80%;
-    text-align: center; 
-    order: 3; 
+    text-align: center;
+    order: 3;
   }
   main > :nth-child(3) > div > .saltedCaramel {
     font-size: 50px;
@@ -1055,68 +1114,68 @@ footer > img:last-child {
   }
 
   /* Section 4 */
-   main > :nth-child(4) {
-     flex-direction: column;
-     gap: 20px; 
-   }
+  main > :nth-child(4) {
+    flex-direction: column;
+    gap: 20px;
+  }
   main > :nth-child(4) > h2 {
     position: static;
     width: 80%;
-    text-align: center; 
+    text-align: center;
     font-size: 20px;
   }
   main > :nth-child(4) > img {
-    width: 70%; 
+    width: 70%;
     max-width: 400px;
   }
 
   /* Section 5 */
   main > :nth-child(5) {
-      flex-direction: column;
-      align-items: center;
-      gap: 80px; 
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
   }
   main > :nth-child(5) > div {
     position: static;
-    order: 2; 
+    order: 2;
     width: 80%;
     text-align: center;
-    gap: 15px; 
+    gap: 15px;
   }
   main > :nth-child(5) > img {
-    width: 70%; 
+    width: 70%;
     max-width: 350px;
     height: auto;
-    order: 1; 
+    order: 1;
   }
   main > :nth-child(5) > div > h2 {
     font-size: 20px;
   }
-  main > :nth-child(5) > div > p { 
+  main > :nth-child(5) > div > p {
     display: -webkit-box;
-    -webkit-line-clamp: 3; 
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  main > :nth-child(5) > h2 { 
-    top: -60px; 
+  main > :nth-child(5) > h2 {
+    top: -60px;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    height: 150px;
-    width: 150px;
-    font-size: 30px;
-    order: 3; 
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
+    order: 3;
   }
 
   /* Section 6 */
   main > :nth-child(6) {
     flex-direction: column-reverse;
     align-items: center;
-    gap: 30px; 
+    gap: 30px;
   }
-   main > :nth-child(6) > img {
+  main > :nth-child(6) > img {
     width: 70%;
     max-width: 350px;
   }
@@ -1125,30 +1184,29 @@ footer > img:last-child {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center; 
-    text-align: center; 
+    align-items: center;
+    text-align: center;
   }
-   main > :nth-child(6) > .content > * { 
-     width: 100%;
-     margin-bottom: 15px;
-   }
-   main > :nth-child(6) > .content > form {
-     width: 60%; 
-     margin: 0 auto;
-   }
+  main > :nth-child(6) > .content > * {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  main > :nth-child(6) > .content > form {
+    width: 60%;
+    margin: 0 auto;
+  }
   main > :nth-child(6) > .content > h2 {
     text-align: center;
-    width: 100%; 
+    width: 100%;
   }
-   main > :nth-child(6) > .content > p:nth-of-type(1) {
-      margin-bottom: 20px;
-   }
-   main > :nth-child(6) > .content > p:nth-of-type(2),
-   main > :nth-child(6) > .content > p:nth-of-type(3) {
-     width: fit-content;
-     margin: 5px auto;
-   }
-
+  main > :nth-child(6) > .content > p:nth-of-type(1) {
+    margin-bottom: 20px;
+  }
+  main > :nth-child(6) > .content > p:nth-of-type(2),
+  main > :nth-child(6) > .content > p:nth-of-type(3) {
+    width: fit-content;
+    margin: 5px auto;
+  }
 
   /* Section 7 */
   main > :nth-child(7) > img {
@@ -1163,29 +1221,29 @@ footer > img:last-child {
   /* Section 8 */
   main > :nth-child(8) {
     align-items: center;
-    text-align: center; 
+    text-align: center;
   }
   main > :nth-child(8) > h2:nth-of-type(1) {
     font-size: 30px;
     width: 80%;
   }
   main > :nth-child(8) > div {
-     width: 90%; 
-     margin-bottom: 60px; 
+    width: 90%;
+    margin-bottom: 60px;
   }
-   main > :nth-child(8) > div > :first-child {
-      width: 100%; 
-   }
-  main > :nth-child(8) > div > :last-child { 
+  main > :nth-child(8) > div > :first-child {
+    width: 100%;
+  }
+  main > :nth-child(8) > div > :last-child {
     min-width: 140px;
-    width: 25%; 
-    right: 0; 
-    bottom: -35%; 
+    width: 25%;
+    right: 0;
+    bottom: -35%;
   }
   main > :nth-child(8) > h2:nth-of-type(2) {
-      font-size: 50px; 
+    font-size: 50px;
   }
-  main > :nth-child(8) > h2:nth-of-type(3) { 
+  main > :nth-child(8) > h2:nth-of-type(3) {
     width: 60%;
   }
   main > :nth-child(8) > p {
@@ -1199,15 +1257,15 @@ footer > img:last-child {
 
   /* Footer */
   footer {
-    width: 90%; 
+    width: 90%;
   }
   footer > h1 {
-    font-size: 20px; 
+    font-size: 20px;
     padding: 15px 0;
   }
   footer > p {
     font-size: 14px;
-    width: 80%; 
+    width: 80%;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -1215,36 +1273,35 @@ footer > img:last-child {
     text-overflow: ellipsis;
   }
   footer > nav {
-    width: 90%; 
+    width: 90%;
   }
   footer > p + img {
-    width: 120px; 
-    left: -40px; 
+    width: 120px;
+    left: -40px;
     bottom: 3%;
   }
-  footer > img:last-child { 
-    width: 120px; 
-    right: -30px; 
+  footer > img:last-child {
+    width: 120px;
+    right: -30px;
   }
   footer > nav > ul > li > a {
-    font-size: 11px; 
+    font-size: 11px;
   }
   footer > nav > ul {
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 5px 10px; 
+    gap: 5px 10px;
   }
-   footer > nav + a { 
-     padding: 8px 50px;
-     font-size: 18px;
-   }
-   footer > a:nth-of-type(2) {
-      font-size: 16px;
-   }
+  footer > nav + a {
+    padding: 8px 50px;
+    font-size: 18px;
+  }
+  footer > a:nth-of-type(2) {
+    font-size: 16px;
+  }
 }
 
-
-@media (max-width: 390px) {
+@media (max-width: 390.99px) {
   /* Header */
   header,
   header > :first-child,
@@ -1288,7 +1345,10 @@ footer > img:last-child {
   header > :nth-child(2) > .loginAndCreate > :last-child {
     font-size: 12px;
   }
-
+  header > :nth-child(2) > .loginAndCreate > :first-child::after {
+    top: -150%;
+    font-size: 30px;
+  }
   /* Section 1 */
   main > :first-child {
     margin-top: 5rem;
@@ -1377,8 +1437,6 @@ footer > img:last-child {
     margin-bottom: 5rem;
   }
   main > :nth-child(4) > h2 {
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
     font-size: 18px;
   }
